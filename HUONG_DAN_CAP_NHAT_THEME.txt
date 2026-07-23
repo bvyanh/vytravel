@@ -1,0 +1,21 @@
+VY TRAVEL — BẢN 7 THEME
+
+Các theme:
+1. Tím mộng mơ
+2. Xanh biển
+3. Xanh lá
+4. Cam hoàng hôn
+5. Nâu vintage
+6. Đen huyền bí
+7. Trắng tinh khôi
+
+Cách cập nhật:
+1. Giải nén file ZIP.
+2. Tải toàn bộ file lên repository GitHub vytravel và ghi đè file cũ.
+3. Commit.
+4. Chờ GitHub Pages cập nhật.
+5. Nhấn Ctrl + Shift + R nếu trình duyệt vẫn hiển thị bản cũ.
+
+Nút bảng màu 🎨 ở góc trên dùng để chọn theme.
+Theme được lưu tự động trên thiết bị.
+Nút trăng chuyển nhanh sang theme Đen huyền bí và quay lại theme sáng trước đó.

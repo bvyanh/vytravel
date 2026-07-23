@@ -1,244 +1,402 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#6d5dfc">
-<title>Vy Travel</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#eef2ff">
+<title>Vy Travel — Dynamic Theme</title>
+<style>
+:root{--bg:#eef2f7;--card:rgba(255,255,255,.84);--surface:#fff;--text:#15171c;--muted:#747b88;--line:rgba(30,40,60,.10);--accent:#5b7cff;--accent2:#8a63ff;--bad:#df5656;--shadow:0 18px 55px rgba(45,56,80,.12)}
+body.dark{--bg:#0f1117;--card:rgba(29,33,42,.86);--surface:#1b1f28;--text:#f5f7fb;--muted:#a7adba;--line:rgba(255,255,255,.09);--shadow:0 18px 55px rgba(0,0,0,.38)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Arial,sans-serif;background:radial-gradient(circle at 10% 0%,rgba(91,124,255,.17),transparent 28%),radial-gradient(circle at 100% 10%,rgba(138,99,255,.14),transparent 30%),var(--bg)}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1050px;margin:auto;padding:14px 14px 110px}.topbar{position:sticky;top:0;z-index:30;padding-top:max(8px,env(safe-area-inset-top));backdrop-filter:blur(18px)}.top-inner,.card{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(18px)}.top-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;border-radius:22px;padding:12px 14px}.brand{display:flex;align-items:center;gap:11px}.logo{width:44px;height:44px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:22px}.brand h1{font-size:18px;margin:0}.brand p{font-size:12px;color:var(--muted);margin:3px 0 0}.btn,.icon-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:13px;padding:10px 12px}.icon-btn{width:42px;height:42px;padding:0;font-size:18px}.primary{border:0;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2))}.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:16px}.card{border-radius:24px}.progress-card{padding:19px}.progress-row{display:flex;justify-content:space-between;gap:15px;align-items:center}.progress-meta h2{margin:0 0 5px;font-size:24px}.progress-meta p{margin:0;color:var(--muted)}.bar{height:10px;border-radius:99px;background:rgba(130,140,160,.17);overflow:hidden;margin:15px 0 9px}.bar i{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:.3s}.ring{--p:0;width:112px;height:112px;flex:none;border-radius:50%;display:grid;place-items:center;position:relative;background:conic-gradient(var(--accent) calc(var(--p)*1%),rgba(130,140,160,.17) 0)}.ring:after{content:"";position:absolute;inset:10px;background:var(--surface);border-radius:50%}.ring div{position:relative;z-index:1;text-align:center}.ring strong{font-size:25px}.ring span{display:block;font-size:11px;color:var(--muted)}.quick-grid{padding:14px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.quick{padding:14px;border-radius:17px;background:var(--surface);border:1px solid var(--line)}.quick b{display:block;font-size:19px}.quick span{font-size:12px;color:var(--muted)}.controls{margin-top:14px;padding:13px;display:grid;grid-template-columns:1fr auto auto;gap:10px}.search{display:flex;gap:8px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 12px}.search input{width:100%;border:0;outline:0;color:var(--text);background:transparent;padding:11px 0}select{border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);padding:10px 12px}.tabs{display:flex;gap:8px;overflow:auto;padding:14px 2px 2px;scrollbar-width:none}.tab{white-space:nowrap;border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:999px;padding:9px 13px}.tab.active{background:var(--text);color:var(--bg)}.section{margin-top:14px;overflow:hidden}.section-head{padding:15px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}.section-title{display:flex;gap:10px;align-items:center}.emo{width:40px;height:40px;display:grid;place-items:center;background:var(--surface);border-radius:13px;font-size:20px}.section-title h3{margin:0;font-size:17px}.section-title small{color:var(--muted)}.weight{font-size:12px;color:var(--muted);background:var(--surface);padding:7px 9px;border-radius:999px}.item-list{padding:8px}.item{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px;border:1px solid transparent;border-radius:16px;transition:.2s}.item:hover{background:var(--surface);border-color:var(--line)}.item.dragging{opacity:.35}.check{appearance:none;width:24px;height:24px;border-radius:8px;border:2px solid rgba(120,128,145,.45);display:grid;place-items:center}.check:checked{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent}.check:checked:after{content:"✓";color:white;font-weight:800}.item-line{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.item-name{font-weight:650}.done .item-name{text-decoration:line-through;color:var(--muted)}.badge{font-size:10px;padding:4px 7px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}.req{color:#d34747}.should{color:#a97418}.opt{color:#26865b}.note{font-size:12px;color:var(--muted);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.item-actions{display:flex;gap:3px}.mini{border:0;background:transparent;color:var(--muted);padding:6px;border-radius:9px;font-size:17px}.mini:hover{background:var(--surface);color:var(--text)}.favorite{color:#f0a827}.empty{padding:22px;text-align:center;color:var(--muted)}.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:40;border:0;border-radius:18px;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:14px 18px;font-weight:700;box-shadow:0 15px 35px rgba(91,124,255,.35)}.footer{margin-top:16px;padding:14px;display:flex;gap:8px;flex-wrap:wrap}.modal-wrap{position:fixed;inset:0;z-index:60;background:rgba(10,12,18,.48);display:none;align-items:flex-end;justify-content:center;padding:12px}.modal-wrap.show{display:flex}.modal{width:min(620px,100%);max-height:92vh;overflow:auto;background:var(--surface);border-radius:26px 26px 20px 20px;padding:18px;box-shadow:0 25px 70px rgba(0,0,0,.35)}.modal h3{margin:0 0 14px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;color:var(--muted)}.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:13px;background:var(--bg);color:var(--text);outline:none}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:15px}.toast{position:fixed;left:50%;bottom:88px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--text);color:var(--bg);padding:10px 14px;border-radius:999px;z-index:90;transition:.25s}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}@media(max-width:720px){.hero{grid-template-columns:1fr}.controls{grid-template-columns:1fr 1fr}.controls .search{grid-column:1/-1}.ring{width:96px;height:96px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.item{grid-template-columns:auto 1fr}.item-actions{grid-column:2;justify-content:flex-end}}@media print{body{background:#fff}.topbar,.controls,.tabs,.fab,.footer,.item-actions{display:none!important}.app{max-width:none;padding:0}.card{box-shadow:none;background:#fff;border:1px solid #ddd}}
+
+.trip-panel{margin-top:14px;padding:14px}.trip-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.trip-top h2{margin:0;font-size:18px}.trip-list{display:flex;gap:9px;overflow:auto;padding-bottom:2px;scrollbar-width:none}
+.trip-chip{min-width:175px;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:17px;padding:11px 12px}
+.trip-chip.active{outline:2px solid var(--accent);background:linear-gradient(135deg,rgba(91,124,255,.13),rgba(138,99,255,.11))}
+.trip-chip b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.trip-chip small{display:block;color:var(--muted);margin-top:4px}
+.trip-actions{display:flex;gap:5px;margin-top:8px;flex-wrap:wrap}.trip-actions button{border:0;background:transparent;color:var(--muted);padding:3px 4px}
+
+/* ===== THEME SYSTEM ===== */
+:root{
+  --theme-bg:#eef2f7;
+  --theme-surface:rgba(255,255,255,.88);
+  --theme-card:#ffffff;
+  --theme-text:#171922;
+  --theme-muted:#7a8294;
+  --theme-line:#e5e8ef;
+  --theme-accent:#6c63ff;
+  --theme-accent-2:#8b5cf6;
+  --theme-soft:#efefff;
+  --theme-hero:linear-gradient(135deg,#765bff,#9d6cff);
+  --theme-shadow:0 18px 45px rgba(45,54,84,.12);
+}
+body{
+  background:
+    radial-gradient(circle at 10% 0%, color-mix(in srgb,var(--theme-accent) 15%, transparent), transparent 34%),
+    radial-gradient(circle at 100% 5%, color-mix(in srgb,var(--theme-accent-2) 12%, transparent), transparent 30%),
+    var(--theme-bg)!important;
+  color:var(--theme-text)!important;
+}
+.card,.top-inner,.modal,.trip-chip,.section,.controls,.footer{
+  background:var(--theme-surface)!important;
+  border-color:var(--theme-line)!important;
+  box-shadow:var(--theme-shadow)!important;
+}
+.brand h1,.trip-top h2,.progress-meta h2,.section-title,.item-name,.modal h3{color:var(--theme-text)!important}
+.brand p,.trip-top small,.muted,.item-note,.theme-modal p,.theme-card small{color:var(--theme-muted)!important}
+.primary,.fab,.tab.active{background:var(--theme-accent)!important;color:white!important}
+.bar i,.check:checked{background:var(--theme-accent)!important}
+.trip-chip.active{outline-color:var(--theme-accent)!important;background:var(--theme-soft)!important}
+.ring{background:conic-gradient(var(--theme-accent) calc(var(--p)*1%),var(--theme-line) 0)!important}
+.logo{background:var(--theme-hero)!important}
+input,select,textarea,.btn,.icon-btn,.quick,.item,.theme-card{
+  border-color:var(--theme-line)!important;
+}
+input,select,textarea,.btn,.icon-btn,.quick{
+  background:var(--theme-card)!important;color:var(--theme-text)!important
+}
+.theme-modal{width:min(820px,96vw)}
+.theme-modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.theme-modal-head h3{margin:0 0 5px}
+.theme-modal-head p{margin:0}
+.theme-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.theme-card{border:2px solid var(--theme-line);background:var(--theme-card);border-radius:16px;padding:10px;text-align:left;transition:.2s}
+.theme-card:hover{transform:translateY(-2px)}
+.theme-card.active{border-color:var(--theme-accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--theme-accent) 18%,transparent)}
+.theme-card b{display:block;margin-top:9px;color:var(--theme-text)}
+.theme-card small{display:block;margin-top:3px}
+.theme-preview{height:78px;border-radius:12px;display:block;position:relative;overflow:hidden}
+.theme-preview:before,.theme-preview:after,.theme-preview i{content:"";position:absolute}
+.theme-preview:before{left:0;right:0;bottom:0;height:44%;clip-path:polygon(0 72%,22% 38%,42% 66%,61% 25%,80% 58%,100% 28%,100% 100%,0 100%)}
+.theme-preview:after{width:48px;height:48px;border-radius:50%;right:13px;top:11px;opacity:.8}
+.theme-preview i{left:0;right:0;bottom:0;height:25%;opacity:.55}
+.dream-preview{background:linear-gradient(#d8c7ff,#9b73ef)}.dream-preview:before{background:#6543ba}.dream-preview:after{background:#f2d6ff}.dream-preview i{background:#4c338f}
+.ocean-preview{background:linear-gradient(#79d6ff,#d8f4ff)}.ocean-preview:before{background:#388bb9}.ocean-preview:after{background:#fff5b8}.ocean-preview i{background:#087db8}
+.forest-preview{background:linear-gradient(#dff3d4,#a8d591)}.forest-preview:before{background:#4d8c48}.forest-preview:after{background:#f8f1b6}.forest-preview i{background:#35723c}
+.sunset-preview{background:linear-gradient(#ffb37d,#f2784b)}.sunset-preview:before{background:#9b422f}.sunset-preview:after{background:#ffd78e}.sunset-preview i{background:#7d3327}
+.vintage-preview{background:linear-gradient(#e7d3a8,#9f7446)}.vintage-preview:before{background:#76542f}.vintage-preview:after{background:#f3d6a0}.vintage-preview i{background:#5f432b}
+.midnight-preview{background:linear-gradient(#111b32,#263b62)}.midnight-preview:before{background:#0a1121}.midnight-preview:after{background:#e6f0ff}.midnight-preview i{background:#08111f}
+.mist-preview{background:linear-gradient(#f8fbff,#dbe7f4)}.mist-preview:before{background:#a8bed4}.mist-preview:after{background:#ffffff}.mist-preview i{background:#c7d6e5}
+
+/* Theme palettes */
+body[data-theme="dream"]{
+ --theme-bg:#f0edff;--theme-surface:rgba(255,255,255,.9);--theme-card:#fff;
+ --theme-text:#21183d;--theme-muted:#81769a;--theme-line:#e5def8;
+ --theme-accent:#6e4fe8;--theme-accent-2:#9f72ef;--theme-soft:#eee9ff;
+ --theme-hero:linear-gradient(135deg,#6549d8,#ad73ef);--theme-shadow:0 18px 42px rgba(81,55,150,.13)
+}
+body[data-theme="ocean"]{
+ --theme-bg:#edf8fc;--theme-surface:rgba(255,255,255,.92);--theme-card:#fff;
+ --theme-text:#10354b;--theme-muted:#6e8796;--theme-line:#d7eaf2;
+ --theme-accent:#1688d4;--theme-accent-2:#36b9d9;--theme-soft:#e4f5fc;
+ --theme-hero:linear-gradient(135deg,#0879c2,#2bb9d1);--theme-shadow:0 18px 42px rgba(17,115,159,.12)
+}
+body[data-theme="forest"]{
+ --theme-bg:#f1f6ec;--theme-surface:rgba(255,255,250,.92);--theme-card:#fffef9;
+ --theme-text:#1e3c28;--theme-muted:#718472;--theme-line:#dce8d8;
+ --theme-accent:#3f8547;--theme-accent-2:#6aa75e;--theme-soft:#e9f4e6;
+ --theme-hero:linear-gradient(135deg,#347440,#78a95f);--theme-shadow:0 18px 42px rgba(49,105,60,.11)
+}
+body[data-theme="sunset"]{
+ --theme-bg:#fff2e8;--theme-surface:rgba(255,250,245,.93);--theme-card:#fffaf5;
+ --theme-text:#4b291d;--theme-muted:#947363;--theme-line:#f2d9ca;
+ --theme-accent:#dc6032;--theme-accent-2:#ee9052;--theme-soft:#ffeadf;
+ --theme-hero:linear-gradient(135deg,#d75432,#ef954e);--theme-shadow:0 18px 42px rgba(172,77,37,.12)
+}
+body[data-theme="vintage"]{
+ --theme-bg:#eee4d1;--theme-surface:rgba(255,248,232,.94);--theme-card:#fff8e8;
+ --theme-text:#3f2f20;--theme-muted:#8a7358;--theme-line:#dfc9a7;
+ --theme-accent:#80613b;--theme-accent-2:#ad8250;--theme-soft:#efe2ca;
+ --theme-hero:linear-gradient(135deg,#6f5030,#aa7c48);--theme-shadow:0 18px 42px rgba(92,65,34,.14)
+}
+body[data-theme="midnight"]{
+ --theme-bg:#08111e;--theme-surface:rgba(16,28,44,.94);--theme-card:#122036;
+ --theme-text:#eef5ff;--theme-muted:#9aabc1;--theme-line:#293b54;
+ --theme-accent:#4388f4;--theme-accent-2:#6d70ff;--theme-soft:#182d4c;
+ --theme-hero:linear-gradient(135deg,#194d97,#4d4cc8);--theme-shadow:0 18px 42px rgba(0,0,0,.34)
+}
+body[data-theme="mist"]{
+ --theme-bg:#f6f8fb;--theme-surface:rgba(255,255,255,.96);--theme-card:#fff;
+ --theme-text:#202b39;--theme-muted:#7b8796;--theme-line:#e4e9ef;
+ --theme-accent:#7d97b5;--theme-accent-2:#a8bbcf;--theme-soft:#edf2f7;
+ --theme-hero:linear-gradient(135deg,#718eae,#afc2d5);--theme-shadow:0 14px 36px rgba(55,72,92,.09)
+}
+body[data-theme="midnight"] .item:hover,
+body[data-theme="midnight"] .quick{background:#172840!important}
+body[data-theme="midnight"] .badge{background:#1b3150!important;color:#cbdcff!important}
+
+@media(max-width:720px){
+  .theme-grid{grid-template-columns:repeat(2,1fr)}
+  .theme-preview{height:70px}
+}
+
+
+/* ===== DYNAMIC THEME ===== */
+.dynamic-status{margin-top:14px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;overflow:hidden;position:relative}
+.dynamic-status:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-75px;top:-105px;background:color-mix(in srgb,var(--theme-accent) 18%,transparent)}
+.weather-main{display:flex;align-items:center;gap:12px;position:relative;z-index:1}.weather-icon{font-size:34px;width:50px;height:50px;display:grid;place-items:center;border-radius:16px;background:var(--theme-soft)}
+.weather-copy b{display:block;font-size:15px}.weather-copy small{display:block;color:var(--theme-muted);margin-top:4px}.weather-temp{font-size:23px;font-weight:750;position:relative;z-index:1;text-align:right}.weather-temp small{font-size:11px;display:block;color:var(--theme-muted);font-weight:500;margin-top:3px}
+.mode-switch{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:16px}.mode-btn{border:1px solid var(--theme-line);background:var(--theme-card);color:var(--theme-text);padding:11px 8px;border-radius:14px;text-align:center}.mode-btn span{display:block;font-size:20px;margin-bottom:4px}.mode-btn b{display:block;font-size:12px}.mode-btn small{display:block;font-size:10px;color:var(--theme-muted);margin-top:3px}.mode-btn.active{border-color:var(--theme-accent);background:var(--theme-soft);box-shadow:0 0 0 2px color-mix(in srgb,var(--theme-accent) 14%,transparent)}
+.dynamic-note{padding:11px 12px;border-radius:14px;background:var(--theme-soft);font-size:12px;color:var(--theme-muted);margin-bottom:14px;line-height:1.45}.dynamic-note strong{color:var(--theme-text)}
+.weather-fx{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}.weather-fx .cloud{position:absolute;width:180px;height:60px;border-radius:50px;background:rgba(255,255,255,.16);filter:blur(1px);animation:cloudMove 32s linear infinite}.weather-fx .cloud:before,.weather-fx .cloud:after{content:"";position:absolute;border-radius:50%;background:inherit}.weather-fx .cloud:before{width:70px;height:70px;left:28px;top:-30px}.weather-fx .cloud:after{width:90px;height:90px;right:25px;top:-42px}.weather-fx .c1{top:12%;left:-220px}.weather-fx .c2{top:30%;left:-320px;animation-delay:-15s;transform:scale(.75)}
+.weather-fx.rain:after{content:"";position:absolute;inset:-50px;background-image:repeating-linear-gradient(112deg,transparent 0 18px,rgba(150,190,230,.22) 19px 20px,transparent 21px 38px);animation:rainMove .8s linear infinite}
+@keyframes cloudMove{to{transform:translateX(calc(100vw + 520px))}}@keyframes rainMove{to{transform:translate(-24px,55px)}}
+body[data-period="dawn"]{--theme-bg:#fff2e6;--theme-accent:#e77b4c;--theme-accent-2:#f2aa68;--theme-soft:#ffeadb;--theme-hero:linear-gradient(135deg,#e26c46,#f4ac72)}
+body[data-period="day"][data-weather="clear"]{--theme-bg:#edf8ff;--theme-accent:#1688d4;--theme-accent-2:#43bddf;--theme-soft:#e1f4fc;--theme-hero:linear-gradient(135deg,#087ac4,#37badc)}
+body[data-period="sunset"]{--theme-bg:#fff0e4;--theme-accent:#dd6134;--theme-accent-2:#f19a55;--theme-soft:#ffe6d7;--theme-hero:linear-gradient(135deg,#d95332,#ef9650)}
+body[data-period="night"]{--theme-bg:#08111e;--theme-surface:rgba(16,28,44,.94);--theme-card:#122036;--theme-text:#eef5ff;--theme-muted:#9aabc1;--theme-line:#293b54;--theme-accent:#4388f4;--theme-accent-2:#746ff7;--theme-soft:#182d4c;--theme-hero:linear-gradient(135deg,#194d97,#514bc9);--theme-shadow:0 18px 42px rgba(0,0,0,.34)}
+body[data-weather="rain"]{--theme-bg:#e8eff5;--theme-accent:#557fa5;--theme-accent-2:#7e9db8;--theme-soft:#dfeaf2;--theme-hero:linear-gradient(135deg,#4e7395,#849fb8)}
+body[data-weather="cloudy"]{--theme-bg:#eef1f4;--theme-accent:#70879d;--theme-accent-2:#91a6b8;--theme-soft:#e4eaef;--theme-hero:linear-gradient(135deg,#667e94,#9badbb)}
+body[data-weather="storm"]{--theme-bg:#111827;--theme-surface:rgba(25,34,50,.94);--theme-card:#182338;--theme-text:#f5f7ff;--theme-muted:#a7b1c4;--theme-line:#32405a;--theme-accent:#776df0;--theme-accent-2:#4e8fdc;--theme-soft:#242f49;--theme-hero:linear-gradient(135deg,#4d4b9c,#347cb8)}
+@media(max-width:560px){.dynamic-status{align-items:flex-start}.weather-temp{font-size:20px}.mode-switch{grid-template-columns:1fr}.mode-btn{display:grid;grid-template-columns:34px 1fr;text-align:left;align-items:center}.mode-btn span{grid-row:1/3;margin:0}.mode-btn b,.mode-btn small{grid-column:2}}
+
+</style>
+
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<style>
-:root{
-  --bg:#eef3f9;--surface:rgba(255,255,255,.86);--card:#fff;--text:#151723;
-  --muted:#778094;--line:#e7eaf1;--accent:#6c63ff;--accent2:#8b5cf6;
-  --shadow:0 18px 45px rgba(40,55,90,.12);--radius:24px;
-}
-*{box-sizing:border-box}
-html{background:var(--bg)}
-body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);
-background:radial-gradient(circle at 15% 0%,#e6e8ff 0,transparent 36%),radial-gradient(circle at 100% 10%,#f0e8ff 0,transparent 30%),var(--bg);min-height:100vh}
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-.app{max-width:1180px;margin:auto;padding:22px 22px 110px}
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:15px 18px;background:var(--surface);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.75);border-radius:26px;box-shadow:var(--shadow);position:sticky;top:12px;z-index:20}
-.brand{display:flex;align-items:center;gap:12px}.logo{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-size:25px;box-shadow:0 10px 25px rgba(108,99,255,.35)}
-.brand h1{font-size:21px;margin:0}.brand p{margin:3px 0 0;color:var(--muted);font-size:13px}
-.actions{display:flex;gap:8px}.iconbtn{border:1px solid var(--line);background:#fff;border-radius:14px;padding:10px 12px}
-.page{display:none}.page.active{display:block}
-.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;margin-top:18px}
-.card{background:var(--surface);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.8);border-radius:var(--radius);box-shadow:var(--shadow)}
-.hero-main{padding:28px;min-height:260px;background:linear-gradient(135deg,rgba(108,99,255,.97),rgba(139,92,246,.94));color:#fff;position:relative;overflow:hidden}
-.hero-main:after{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:rgba(255,255,255,.12);right:-70px;top:-70px}
-.eyebrow{font-size:13px;opacity:.78}.hero-main h2{font-size:34px;line-height:1.12;margin:16px 0 10px;max-width:560px}.hero-main p{max-width:570px;opacity:.88;line-height:1.55}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:14px;padding:11px 15px;background:#fff;color:#222;font-weight:650}.btn.secondary{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.25)}
-.hero-side{padding:22px;display:flex;flex-direction:column;justify-content:space-between}.progress-ring{width:104px;height:104px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--accent) calc(var(--p)*1%),#e8eaf0 0);position:relative}.progress-ring:after{content:"";width:76px;height:76px;border-radius:50%;background:white;position:absolute}.progress-ring strong{z-index:2;font-size:24px}.muted{color:var(--muted)}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}.metric{padding:18px}.metric .icon{font-size:25px}.metric b{font-size:23px;display:block;margin:12px 0 4px}.metric span{color:var(--muted);font-size:13px}
-.section-head{display:flex;align-items:center;justify-content:space-between;margin:28px 2px 12px}.section-head h2{margin:0;font-size:22px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}
-.trip-grid,.notebook-grid,.tour-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.trip-card,.tour-card,.note-card{padding:18px;position:relative;overflow:hidden}
-.trip-card .cover{height:112px;border-radius:18px;background:linear-gradient(135deg,#dfe5ff,#f1e7ff);display:flex;align-items:flex-end;padding:14px;font-size:34px;margin-bottom:14px}
-.trip-card h3,.tour-card h3,.note-card h3{margin:0 0 6px}.small{font-size:13px;color:var(--muted)}
-.bar{height:8px;background:#e9ecf3;border-radius:99px;overflow:hidden;margin:14px 0 8px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:99px}
-.card-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.mini{border:1px solid var(--line);background:white;border-radius:11px;padding:8px 10px;font-size:13px}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;padding:14px;margin-top:14px}.toolbar input,.toolbar select{border:1px solid var(--line);background:white;border-radius:14px;padding:11px 13px}.toolbar input{flex:1;min-width:220px}
-.kit-layout{display:grid;grid-template-columns:280px 1fr;gap:16px;margin-top:16px}.sidebar{padding:14px;height:max-content}.trip-list button{width:100%;text-align:left;border:0;background:transparent;border-radius:14px;padding:12px;margin:3px 0}.trip-list button.active{background:#efefff;color:#5147e8}
-.checklist{padding:16px}.category{margin-bottom:16px}.category h3{margin:8px 0 10px}.item{display:flex;align-items:center;gap:11px;padding:11px 10px;border-bottom:1px solid var(--line)}.item:last-child{border-bottom:0}.item input{width:19px;height:19px}.item.done .name{text-decoration:line-through;color:var(--muted)}.item .name{flex:1}.tag{font-size:11px;background:#f0efff;color:#5b51e7;padding:5px 8px;border-radius:99px}
-.empty{padding:34px;text-align:center;color:var(--muted)}
-.bottomnav{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;width:min(720px,calc(100% - 26px));display:grid;grid-template-columns:repeat(5,1fr);padding:8px;background:rgba(255,255,255,.9);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.8);border-radius:22px;box-shadow:0 18px 45px rgba(40,55,90,.22);z-index:30}
-.navbtn{border:0;background:transparent;border-radius:16px;padding:9px 4px;color:var(--muted);font-size:12px}.navbtn span{display:block;font-size:21px;margin-bottom:3px}.navbtn.active{background:#efefff;color:#5147e8}
-.modalwrap{position:fixed;inset:0;background:rgba(20,23,35,.38);display:none;align-items:center;justify-content:center;padding:18px;z-index:50}.modalwrap.show{display:flex}.modal{width:min(540px,100%);background:white;border-radius:24px;padding:22px;box-shadow:var(--shadow)}.modal h3{margin-top:0}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field input,.field select,.field textarea{border:1px solid var(--line);border-radius:13px;padding:11px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:17px}
-.toast{position:fixed;right:20px;bottom:100px;background:#1d2230;color:white;padding:12px 16px;border-radius:14px;opacity:0;transform:translateY(10px);transition:.2s;z-index:60}.toast.show{opacity:1;transform:none}
-body.dark{--bg:#11141b;--surface:rgba(29,33,44,.9);--card:#1e2330;--text:#f4f6fb;--muted:#9ca6b9;--line:#303646}
-body.dark .iconbtn,body.dark .mini,body.dark .toolbar input,body.dark .toolbar select,body.dark .modal,body.dark .progress-ring:after{background:#202531;color:var(--text)}
-body.dark .trip-list button.active,body.dark .navbtn.active{background:#34305e;color:#c9c5ff}
-@media(max-width:900px){.hero,.kit-layout{grid-template-columns:1fr}.grid4{grid-template-columns:repeat(2,1fr)}.trip-grid,.notebook-grid,.tour-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.app{padding:12px 12px 100px}.brand p{display:none}.hero-main h2{font-size:28px}.grid4,.trip-grid,.notebook-grid,.tour-grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.bottomnav{bottom:8px}.navbtn{font-size:10px}.topbar{top:6px}.hero-main{padding:22px}}
-</style>
+<meta name="apple-mobile-web-app-title" content="Vy Travel">
+
 </head>
 <body>
-<div class="app">
-<header class="topbar">
-  <div class="brand"><div class="logo">🧭</div><div><h1>Vy Travel</h1><p>Trợ lý chuẩn bị và sổ tay dành cho HDV</p></div></div>
-  <div class="actions"><button class="iconbtn" id="themeBtn">🌙</button><button class="iconbtn" id="exportBtn">⇩</button></div>
-</header>
+<div class="app"><div class="topbar"><div class="top-inner"><div class="brand"><div class="logo">🧭</div><div><h1>Vy Travel</h1><p>Tour kit dành cho hướng dẫn viên</p></div></div><div style="display:flex;gap:8px"><button class="icon-btn" id="themeBtn" title="Chọn theme">🎨</button><button class="icon-btn" id="darkBtn">🌙</button><button class="icon-btn" id="resetBtn">↺</button></div></div></div>
 
-<main>
-<section class="page active" id="dashboardPage">
-  <div class="hero">
-    <article class="card hero-main">
-      <div class="eyebrow">CHUYẾN ĐANG CHUẨN BỊ</div>
-      <h2 id="heroTripName">Phan Thiết 3N2Đ</h2>
-      <p id="heroTripNote">Theo dõi hành lý, giấy tờ và những việc cần hoàn thành trước khi khởi hành.</p>
-      <div class="hero-actions"><button class="btn" data-go="kit">Mở Kit chuyến đi</button><button class="btn secondary" id="newTripHero">＋ Tạo chuyến mới</button></div>
-    </article>
-    <article class="card hero-side">
-      <div><span class="muted">Tiến độ chuẩn bị</span><h3 id="progressText">0/0 mục</h3></div>
-      <div class="progress-ring" id="progressRing" style="--p:0"><strong id="progressPct">0%</strong></div>
-      <span class="small" id="missingText">Chưa có dữ liệu</span>
-    </article>
-  </div>
-
-  <div class="grid4">
-    <article class="card metric"><div class="icon">🧳</div><b id="metricTrips">1</b><span>Kit chuyến đi</span></article>
-    <article class="card metric"><div class="icon">📍</div><b id="metricTours">2</b><span>Tuyến tour</span></article>
-    <article class="card metric"><div class="icon">📚</div><b id="metricNotes">4</b><span>Bài sổ tay</span></article>
-    <article class="card metric"><div class="icon">✅</div><b id="metricDone">0</b><span>Vật dụng đã chuẩn bị</span></article>
-  </div>
-
-  <div class="section-head"><div><h2>Chuyến của bạn</h2><p>Mở nhanh hoặc nhân bản để dùng cho tour mới.</p></div><button class="mini" id="newTripDashboard">＋ Chuyến mới</button></div>
-  <div class="trip-grid" id="dashboardTrips"></div>
-</section>
-
-<section class="page" id="kitPage">
-  <div class="section-head"><div><h2>🧳 Kit theo từng chuyến</h2><p>Mỗi chuyến có checklist và tiến độ riêng.</p></div><button class="mini" id="newTripKit">＋ Chuyến mới</button></div>
-  <div class="toolbar card"><input id="kitSearch" placeholder="Tìm quýt, sạc, thuốc..."><select id="kitFilter"><option value="all">Tất cả</option><option value="todo">Chưa chuẩn bị</option><option value="done">Đã chuẩn bị</option></select><button class="mini" id="addItemBtn">＋ Thêm vật dụng</button></div>
-  <div class="kit-layout">
-    <aside class="card sidebar"><div class="trip-list" id="kitTripList"></div></aside>
-    <article class="card checklist" id="checklist"></article>
-  </div>
-</section>
-
-<section class="page" id="tourPage">
-  <div class="section-head"><div><h2>📍 Tour</h2><p>Lưu tuyến đường và các điểm cần thuyết minh.</p></div><button class="mini" id="addTourBtn">＋ Tạo tuyến</button></div>
-  <div class="tour-grid" id="tourGrid"></div>
-</section>
-
-<section class="page" id="notebookPage">
-  <div class="section-head"><div><h2>📚 Sổ tay HDV</h2><p>Bài nói được tổ chức theo tỉnh và điểm đến.</p></div><button class="mini" id="addNoteBtn">＋ Thêm bài</button></div>
-  <div class="toolbar card"><input id="noteSearch" placeholder="Tìm Lê Văn Duyệt, Cà Mau, Miếu Bà..."></div>
-  <div class="notebook-grid" id="notebookGrid"></div>
-</section>
-
-<section class="page" id="settingsPage">
-  <div class="section-head"><div><h2>⚙️ Cài đặt</h2><p>Dữ liệu hiện được lưu trên thiết bị này.</p></div></div>
-  <article class="card" style="padding:22px">
-    <h3>Sao lưu dữ liệu</h3><p class="muted">Xuất file JSON để chuyển dữ liệu sang điện thoại hoặc trình duyệt khác.</p>
-    <div class="card-actions"><button class="mini" id="settingsExport">Xuất JSON</button><label class="mini">Nhập JSON<input id="importInput" type="file" accept=".json" hidden></label></div>
-    <h3 style="margin-top:24px">PWA</h3><p class="muted">Trên iPhone: Safari → Chia sẻ → Thêm vào Màn hình chính. Trên Android: Chrome → Cài đặt ứng dụng.</p>
-  </article>
-</section>
-</main>
+<div class="card dynamic-status" id="dynamicStatus">
+  <div class="weather-main"><div class="weather-icon" id="weatherIcon">🕒</div><div class="weather-copy"><b id="weatherTitle">Đang xác định thời gian…</b><small id="weatherDetail">Theme sẽ tự thay đổi theo giờ và thời tiết.</small></div></div>
+  <div class="weather-temp" id="weatherTemp">--°<small id="themeModeLabel">Dynamic</small></div>
 </div>
+<div class="weather-fx" id="weatherFx"><i class="cloud c1"></i><i class="cloud c2"></i></div>
 
-<nav class="bottomnav">
-<button class="navbtn active" data-page="dashboard"><span>🏠</span>Trang chủ</button>
-<button class="navbtn" data-page="kit"><span>🧳</span>Kit</button>
-<button class="navbtn" data-page="tour"><span>📍</span>Tour</button>
-<button class="navbtn" data-page="notebook"><span>📚</span>Sổ tay</button>
-<button class="navbtn" data-page="settings"><span>⚙️</span>Cài đặt</button>
-</nav>
-
-<div class="modalwrap" id="tripModal"><div class="modal">
-<h3>Tạo chuyến mới</h3>
-<div class="formgrid">
-<div class="field full"><label>Tên chuyến</label><input id="tripName" placeholder="Ví dụ: Đà Lạt 3N2Đ"></div>
-<div class="field"><label>Loại tour</label><select id="tripType"><option value="sea">Biển</option><option value="mountain">Núi</option><option value="city">Thành phố</option><option value="study">Học tập</option></select></div>
-<div class="field"><label>Số ngày</label><input id="tripDays" type="number" min="1" value="3"></div>
+<div class="card trip-panel">
+  <div class="trip-top">
+    <div><h2>🧳 Kit theo từng chuyến</h2><small style="color:var(--muted)">Mỗi chuyến có checklist và tiến độ riêng</small></div>
+    <button class="btn primary" id="addTripBtn">＋ Chuyến mới</button>
+  </div>
+  <div class="trip-list" id="tripList"></div>
+</div>
+<div class="hero"><div class="card progress-card"><div class="progress-row"><div class="progress-meta"><h2>Sẵn sàng lên đường</h2><p id="countText">0/0 mục đã chuẩn bị</p><div class="bar"><i id="barFill"></i></div><small id="weightText">Balo 0 kg · Vali 0 kg</small></div><div class="ring" id="ring"><div><strong id="pct">0%</strong><span>hoàn thành</span></div></div></div></div><div class="card quick-grid" id="quickGrid"></div></div>
+<div class="card controls"><div class="search">🔎<input id="search" placeholder="Tìm quýt, sạc, thuốc..."></div><select id="statusFilter"><option value="all">Tất cả</option><option value="todo">Chưa hoàn thành</option><option value="done">Đã hoàn thành</option><option value="fav">Yêu thích ⭐</option></select><select id="dayFilter"><option value="all">Mọi ngày</option><option value="1">Ngày 1</option><option value="2">Ngày 2</option><option value="3">Ngày 3</option></select></div>
+<div class="tabs" id="tourTabs"></div><main id="sections"></main><div class="card footer"><button class="btn" id="printBtn">🖨️ In / PDF</button><button class="btn" id="exportBtn">⬇️ Xuất JSON</button><label class="btn">⬆️ Nhập JSON<input type="file" id="importFile" accept=".json" hidden></label></div></div>
+<button class="fab" id="addBtn">＋ Thêm vật dụng</button>
+<div class="modal-wrap" id="modalWrap"><div class="modal"><h3 id="modalTitle">Thêm vật dụng</h3><div class="form-grid"><div class="field full"><label>Tên vật dụng</label><input id="fName"></div><div class="field"><label>Nhóm</label><select id="fSection"></select></div><div class="field"><label>Danh mục</label><select id="fCategory"><option>Quần áo</option><option>Học tập</option><option>Điện tử</option><option>Đồ ăn</option><option>Thuốc</option><option>Chăm sóc cá nhân</option><option>Giấy tờ</option><option>Khác</option></select></div><div class="field"><label>Ưu tiên</label><select id="fPriority"><option value="required">Bắt buộc</option><option value="should">Nên mang</option><option value="optional">Tùy chọn</option></select></div><div class="field"><label>Ngày sử dụng</label><select id="fDay"><option value="all">Mọi ngày</option><option value="1">Ngày 1</option><option value="2">Ngày 2</option><option value="3">Ngày 3</option></select></div><div class="field"><label>Khối lượng (kg)</label><input id="fWeight" type="number" step="0.01" min="0" value="0"></div><div class="field"><label>Loại tour</label><select id="fTour"><option value="all">Tất cả</option><option value="sea">Tour biển</option><option value="mountain">Tour núi</option><option value="city">Tour city</option><option value="study">Tour học tập</option></select></div><div class="field full"><label>Ghi chú</label><textarea id="fNote" rows="3"></textarea></div></div><div class="modal-actions"><button class="btn" id="cancelBtn">Hủy</button><button class="btn primary" id="saveBtn">Lưu</button></div></div></div>
+<div class="modal-wrap" id="tripModalWrap"><div class="modal">
+<h3 id="tripModalTitle">Tạo chuyến mới</h3>
+<div class="form-grid">
+<div class="field full"><label>Tên chuyến</label><input id="tripName" placeholder="Ví dụ: Phan Thiết 3N2Đ"></div>
+<div class="field"><label>Loại tour</label><select id="tripType"><option value="sea">Tour biển</option><option value="mountain">Tour núi</option><option value="city">Tour city</option><option value="study">Tour học tập</option></select></div>
+<div class="field"><label>Số ngày</label><input id="tripDays" type="number" min="1" max="30" value="3"></div>
 <div class="field full"><label>Ghi chú</label><textarea id="tripNote" rows="3"></textarea></div>
 </div>
-<div class="modal-actions"><button class="mini" data-close="tripModal">Hủy</button><button class="btn" id="saveTripBtn" style="background:var(--accent);color:white">Lưu chuyến</button></div>
+<div class="modal-actions"><button class="btn" id="tripCancelBtn">Hủy</button><button class="btn primary" id="tripSaveBtn">Lưu chuyến</button></div>
 </div></div>
 
-<div class="modalwrap" id="itemModal"><div class="modal">
-<h3>Thêm vật dụng</h3>
-<div class="formgrid">
-<div class="field full"><label>Tên vật dụng</label><input id="itemName" placeholder="Ví dụ: Quýt"></div>
-<div class="field"><label>Nhóm</label><select id="itemCategory"><option>Trong balo</option><option>Trong vali</option><option>Giấy tờ</option><option>Trước khi rời nhà</option><option>Trước khi lên xe</option><option>Thuốc & sức khỏe</option></select></div>
-<div class="field"><label>Gắn nhãn</label><input id="itemTag" placeholder="Bắt buộc"></div>
+<div class="modal-wrap" id="themeModalWrap">
+  <div class="modal theme-modal">
+    <div class="theme-modal-head">
+      <div>
+        <h3>Chọn theme giao diện</h3>
+        <p>Cá nhân hóa Vy Travel theo phong cách của bạn.</p>
+      </div>
+      <button class="icon-btn" id="themeCloseBtn">✕</button>
+    </div>
+
+    <div class="mode-switch" id="modeSwitch">
+      <button class="mode-btn" data-mode="manual"><span>🎨</span><b>Manual</b><small>Tự chọn theme</small></button>
+      <button class="mode-btn" data-mode="dynamic"><span>🌦️</span><b>Dynamic</b><small>Theo giờ & thời tiết</small></button>
+      <button class="mode-btn" data-mode="smart"><span>🧭</span><b>Smart Tour</b><small>Thêm loại tour</small></button>
+    </div>
+    <div class="dynamic-note" id="dynamicNote"><strong>Dynamic:</strong> ứng dụng xin vị trí để lấy thời tiết hiện tại. Nếu bạn từ chối, theme vẫn tự đổi theo thời gian trong ngày.</div>
+    <div class="theme-grid" id="themeGrid">
+      <button class="theme-card" data-theme="dream">
+        <span class="theme-preview dream-preview"><i></i></span>
+        <b>Tím mộng mơ</b><small>Dịu dàng, nổi bật</small>
+      </button>
+      <button class="theme-card" data-theme="ocean">
+        <span class="theme-preview ocean-preview"><i></i></span>
+        <b>Xanh biển</b><small>Tươi sáng, du lịch biển</small>
+      </button>
+      <button class="theme-card" data-theme="forest">
+        <span class="theme-preview forest-preview"><i></i></span>
+        <b>Xanh lá</b><small>Tự nhiên, dễ nhìn</small>
+      </button>
+      <button class="theme-card" data-theme="sunset">
+        <span class="theme-preview sunset-preview"><i></i></span>
+        <b>Cam hoàng hôn</b><small>Ấm áp, năng động</small>
+      </button>
+      <button class="theme-card" data-theme="vintage">
+        <span class="theme-preview vintage-preview"><i></i></span>
+        <b>Nâu vintage</b><small>Cổ điển, sổ tay</small>
+      </button>
+      <button class="theme-card" data-theme="midnight">
+        <span class="theme-preview midnight-preview"><i></i></span>
+        <b>Đen huyền bí</b><small>Tối sâu, ít chói</small>
+      </button>
+      <button class="theme-card" data-theme="mist">
+        <span class="theme-preview mist-preview"><i></i></span>
+        <b>Trắng tinh khôi</b><small>Tối giản, sạch sẽ</small>
+      </button>
+    </div>
+  </div>
 </div>
-<div class="modal-actions"><button class="mini" data-close="itemModal">Hủy</button><button class="btn" id="saveItemBtn" style="background:var(--accent);color:white">Thêm</button></div>
-</div></div>
 
 <div class="toast" id="toast"></div>
+<script>
+const K="vy-travel-kit-v1",TK="vy-travel-kit-theme";
+const S=[["wear","Đang mặc","👕"],["backpack","Balo","🎒"],["suitcase","Vali","🧳"],["docs","Giấy tờ","📄"],["leavehome","Trước khi rời nhà","🏠"],["beforebus","Trước khi lên xe","🚍"],["offbus","Trước khi xuống xe","🚌"],["hotel","Trước khi rời khách sạn","🏨"],["gohome","Trước khi về nhà","🏡"]];
+const TT=[["all","Tất cả"],["sea","Tour biển"],["mountain","Tour núi"],["city","Tour city"],["study","Tour học tập"]];
+const raw=[
+["Áo polo","wear","Quần áo","required","1",.22,"study",""],["AIRism không mút","wear","Quần áo","required","1",.08,"all",""],["Miếng dán ngực Adore","wear","Chăm sóc cá nhân","required","1",.02,"all",""],["Áo khoác chống nắng","wear","Quần áo","should","1",.18,"all",""],["Nón MUJI","wear","Quần áo","should","1",.10,"all",""],["Giày sneaker","wear","Quần áo","required","1",.65,"all",""],["Vớ","wear","Quần áo","required","1",.05,"all",""],
+["Kẹp A4","backpack","Học tập","required","all",.35,"study",""],["Giấy A4","backpack","Học tập","required","all",.18,"study",""],["Bút đen","backpack","Học tập","required","all",.02,"study",""],["Bút xanh","backpack","Học tập","should","all",.02,"study",""],["Bút highlight","backpack","Học tập","optional","all",.02,"study",""],["Lịch trình tour","backpack","Học tập","required","all",.03,"all",""],["Điện thoại","backpack","Điện tử","required","all",.20,"all",""],["Pin dự phòng","backpack","Điện tử","required","all",.25,"all",""],["Dây sạc","backpack","Điện tử","required","all",.05,"all",""],["Củ sạc nhỏ","backpack","Điện tử","should","all",.08,"all",""],["AirPods","backpack","Điện tử","optional","all",.05,"all",""],["Kem chống nắng","backpack","Chăm sóc cá nhân","required","all",.08,"all","Bôi lại sau 2–3 giờ"],["Son dưỡng SPF","backpack","Chăm sóc cá nhân","should","all",.02,"all",""],["Khăn giấy","backpack","Chăm sóc cá nhân","required","all",.05,"all",""],["Khăn ướt","backpack","Chăm sóc cá nhân","required","all",.10,"all",""],["Gel rửa tay","backpack","Chăm sóc cá nhân","should","all",.06,"all",""],["Khẩu trang dự phòng","backpack","Chăm sóc cá nhân","should","all",.03,"all",""],["Bình nước","backpack","Đồ ăn","required","all",.55,"all",""],["Quýt","backpack","Đồ ăn","required","all",.30,"all","Bắt buộc – mang 2–3 quả"],["Snack","backpack","Đồ ăn","optional","all",.12,"all",""],["Kẹo","backpack","Đồ ăn","should","all",.05,"all",""],["Oresol","backpack","Thuốc","should","all",.02,"all",""],["Thuốc cá nhân","backpack","Thuốc","required","all",.05,"all",""],["Thuốc say xe","backpack","Thuốc","required","all",.02,"all",""],["Thuốc đau đầu","backpack","Thuốc","should","all",.02,"all",""],["Thuốc đau bụng","backpack","Thuốc","should","all",.02,"all",""],["Băng cá nhân","backpack","Thuốc","should","all",.02,"all",""],["Áo mưa mỏng","backpack","Khác","should","all",.12,"all",""],["Túi zip chống nước","backpack","Khác","required","all",.04,"sea","Đựng điện thoại và giấy tờ khi đi biển"],["Chìa khóa","backpack","Khác","required","all",.08,"all",""],
+["Áo ngày 2","suitcase","Quần áo","required","2",.20,"all",""],["Áo ngày 3","suitcase","Quần áo","required","3",.20,"all",""],["Quần dự phòng","suitcase","Quần áo","should","all",.35,"all",""],["Đồ ngủ","suitcase","Quần áo","required","all",.22,"all",""],["Đồ bơi","suitcase","Quần áo","required","2",.18,"sea",""],["Dép","suitcase","Quần áo","required","all",.30,"all",""],["Đồ lót x3","suitcase","Quần áo","required","all",.18,"all",""],["Vớ x3","suitcase","Quần áo","required","all",.15,"all",""],["Túi đựng đồ bẩn","suitcase","Khác","should","all",.04,"all",""],["Bàn chải","suitcase","Chăm sóc cá nhân","required","all",.03,"all",""],["Kem đánh răng","suitcase","Chăm sóc cá nhân","required","all",.05,"all",""],["Sữa rửa mặt","suitcase","Chăm sóc cá nhân","required","all",.08,"all",""],["Kem dưỡng","suitcase","Chăm sóc cá nhân","required","all",.06,"all",""],["Tẩy trang","suitcase","Chăm sóc cá nhân","should","all",.12,"all",""],["Bông tẩy trang","suitcase","Chăm sóc cá nhân","should","all",.05,"all",""],["Dầu gội","suitcase","Chăm sóc cá nhân","required","all",.10,"all",""],["Sữa tắm","suitcase","Chăm sóc cá nhân","required","all",.10,"all",""],["Khử mùi","suitcase","Chăm sóc cá nhân","should","all",.07,"all",""],["Lược","suitcase","Chăm sóc cá nhân","should","all",.05,"all",""],["Củ sạc dự phòng","suitcase","Điện tử","should","all",.08,"all",""],["Dây sạc dự phòng","suitcase","Điện tử","should","all",.05,"all",""],
+["CCCD","docs","Giấy tờ","required","all",.01,"all",""],["Thẻ sinh viên","docs","Giấy tờ","required","all",.01,"study",""],["Ví","docs","Giấy tờ","required","all",.12,"all",""],["Tiền mặt","docs","Giấy tờ","required","all",.01,"all",""],["Thẻ ATM","docs","Giấy tờ","should","all",.01,"all",""],
+["Cho mèo ăn","leavehome","Khác","required","1",0,"all",""],["Dọn khay cát","leavehome","Khác","required","1",0,"all",""],["Đổ rác","leavehome","Khác","should","1",0,"all",""],["Đóng cửa sổ","leavehome","Khác","required","1",0,"all",""],["Tắt điện và máy lạnh","leavehome","Khác","required","1",0,"all",""],["Khóa cửa","leavehome","Khác","required","1",0,"all",""],["Mang chìa khóa","leavehome","Khác","required","1",0,"all",""],
+["Uống thuốc say xe","beforebus","Thuốc","required","1",0,"all","Uống đúng thời gian theo hướng dẫn thuốc"],["Để quýt ở ngăn dễ lấy","beforebus","Đồ ăn","required","1",0,"all",""],["Kiểm tra điện thoại","beforebus","Điện tử","required","all",0,"all",""],["Kiểm tra ví và giấy tờ","beforebus","Giấy tờ","required","all",0,"all",""],
+["Mang kẹp A4 và bút","offbus","Học tập","required","all",0,"study",""],["Mang điện thoại","offbus","Điện tử","required","all",0,"all",""],["Mang bình nước","offbus","Đồ ăn","should","all",0,"all",""],["Mang nón","offbus","Quần áo","should","all",0,"all",""],["Không bỏ quên đồ trên xe","offbus","Khác","required","all",0,"all",""],
+["Kiểm tra ổ cắm","hotel","Khác","required","3",0,"all",""],["Kiểm tra phòng tắm","hotel","Khác","required","3",0,"all",""],["Kiểm tra tủ quần áo","hotel","Khác","required","3",0,"all",""],["Kiểm tra gầm giường","hotel","Khác","should","3",0,"all",""],["Lấy sạc và pin dự phòng","hotel","Điện tử","required","3",0,"all",""],["Lấy mỹ phẩm","hotel","Chăm sóc cá nhân","required","3",0,"all",""],
+["Kiểm tra balo","gohome","Khác","required","3",0,"all",""],["Kiểm tra vali","gohome","Khác","required","3",0,"all",""],["Mua quà","gohome","Khác","optional","3",0,"all",""],["Vứt rác","gohome","Khác","should","3",0,"all",""],["Không bỏ quên đồ","gohome","Khác","required","3",0,"all",""]];
+const D=raw.map((x,i)=>({id:"d"+i,name:x[0],section:x[1],category:x[2],priority:x[3],day:x[4],weight:x[5],tour:x[6],note:x[7],done:false,favorite:x[0]==="Quýt"}));
+let tripStore;try{tripStore=JSON.parse(localStorage.getItem("vy-travel-kit-trips-v2"))}catch(e){}
+if(!tripStore||!Array.isArray(tripStore.trips)||!tripStore.trips.length){const t={id:"t1",name:"Phan Thiết 3N2Đ",type:"sea",days:3,note:"",items:structuredClone(D)};tripStore={currentTripId:t.id,trips:[t]}}
+let currentTripId=tripStore.currentTripId||tripStore.trips[0].id;
+let state=(tripStore.trips.find(t=>t.id===currentTripId)||tripStore.trips[0]).items;
+let activeTour="all",editingId=null,editingTripId=null;
+const $=id=>document.getElementById(id);
+function currentTrip(){return tripStore.trips.find(t=>t.id===currentTripId)||tripStore.trips[0]}
+function save(){currentTrip().items=state;tripStore.currentTripId=currentTripId;localStorage.setItem("vy-travel-kit-trips-v2",JSON.stringify(tripStore))}
+function renderTrips(){
+ $("tripList").innerHTML=tripStore.trips.map(t=>{const d=t.items.filter(i=>i.done).length;return `<div class="trip-chip ${t.id===currentTripId?"active":""}" data-id="${t.id}"><b>${esc(t.name)}</b><small>${d}/${t.items.length} mục · ${t.days} ngày</small><div class="trip-actions"><button class="openT">Mở</button><button class="editT">Sửa</button><button class="copyT">Nhân bản</button>${tripStore.trips.length>1?'<button class="delT">Xóa</button>':""}</div></div>`}).join("");
+ document.querySelectorAll(".trip-chip").forEach(c=>{const id=c.dataset.id;
+ c.querySelector(".openT").onclick=()=>{save();currentTripId=id;state=currentTrip().items;activeTour="all";save();renderTrips();render()};
+ c.querySelector(".editT").onclick=()=>openTrip(currentTripById(id));
+ c.querySelector(".copyT").onclick=()=>{const s=currentTripById(id),n=structuredClone(s);n.id="t"+Date.now();n.name=s.name+" – bản sao";n.items=n.items.map((i,k)=>({...i,id:"c"+Date.now()+k,done:false}));tripStore.trips.push(n);currentTripId=n.id;state=n.items;save();renderTrips();render();toast("Đã nhân bản chuyến")};
+ const del=c.querySelector(".delT");if(del)del.onclick=()=>{const t=currentTripById(id);if(confirm(`Xóa chuyến “${t.name}”?`)){tripStore.trips=tripStore.trips.filter(x=>x.id!==id);if(currentTripId===id)currentTripId=tripStore.trips[0].id;state=currentTrip().items;save();renderTrips();render()}};
+ }) }
+function currentTripById(id){return tripStore.trips.find(t=>t.id===id)}function toast(m){$("toast").textContent=m;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),1500)}function esc(s=""){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}function pl(p){return p==="required"?["Bắt buộc","req"]:p==="should"?["Nên mang","should"]:["Tùy chọn","opt"]}
+function visible(){const q=$("search").value.trim().toLowerCase(),st=$("statusFilter").value,day=$("dayFilter").value;return state.filter(i=>(activeTour==="all"||i.tour==="all"||i.tour===activeTour)&&(!q||(i.name+" "+i.category+" "+i.note).toLowerCase().includes(q))&&(st==="all"||(st==="done"&&i.done)||(st==="todo"&&!i.done)||(st==="fav"&&i.favorite))&&(day==="all"||i.day==="all"||i.day===day))}
+function tabs(){$("tourTabs").innerHTML=TT.map(([id,n])=>`<button class="tab ${activeTour===id?"active":""}" data-tour="${id}">${n}</button>`).join("");document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{activeTour=b.dataset.tour;render()})}
+function itemHTML(i){const [a,b]=pl(i.priority);return `<div class="item ${i.done?"done":""}" draggable="true" data-id="${i.id}"><input class="check" type="checkbox" ${i.done?"checked":""}><div><div class="item-line"><span class="item-name">${esc(i.name)}</span><span class="badge ${b}">${a}</span><span class="badge">${esc(i.category)}</span></div>${i.note?`<div class="note">${esc(i.note)}</div>`:""}</div><div class="item-actions"><button class="mini fav ${i.favorite?"favorite":""}">★</button><button class="mini edit">✎</button><button class="mini del">🗑</button></div></div>`}
+function render(){$(".brand p").textContent=currentTrip().name;tabs();const items=visible();$("sections").innerHTML=S.map(([id,name,emo])=>{const arr=items.filter(i=>i.section===id),all=state.filter(i=>i.section===id&&(activeTour==="all"||i.tour==="all"||i.tour===activeTour)),done=all.filter(i=>i.done).length,wt=all.reduce((s,i)=>s+(+i.weight||0),0);return `<section class="card section"><div class="section-head"><div class="section-title"><div class="emo">${emo}</div><div><h3>${name}</h3><small>${done}/${all.length} hoàn thành</small></div></div><div class="weight">${wt.toFixed(2)} kg</div></div><div class="item-list" data-section="${id}">${arr.length?arr.map(itemHTML).join(""):`<div class="empty">Không có mục phù hợp bộ lọc.</div>`}</div></section>`}).join("");bind();progress()}
+function bind(){document.querySelectorAll(".item").forEach(r=>{const id=r.dataset.id,i=state.find(x=>x.id===id);r.querySelector(".check").onchange=e=>{i.done=e.target.checked;save();render()};r.querySelector(".fav").onclick=()=>{i.favorite=!i.favorite;save();render()};r.querySelector(".edit").onclick=()=>openModal(i);r.querySelector(".del").onclick=()=>{if(confirm(`Xóa “${i.name}”?`)){state=state.filter(x=>x.id!==id);save();render()}};r.ondragstart=()=>r.classList.add("dragging");r.ondragend=()=>r.classList.remove("dragging")});document.querySelectorAll(".item-list").forEach(l=>{l.ondragover=e=>{e.preventDefault();const d=document.querySelector(".dragging");if(!d)return;const a=[...l.querySelectorAll(".item:not(.dragging)")].find(el=>e.clientY<=el.getBoundingClientRect().top+el.offsetHeight/2);l.insertBefore(d,a||null)};l.ondrop=()=>{const ids=[...l.querySelectorAll(".item")].map(x=>x.dataset.id),sec=l.dataset.section;ids.forEach(id=>{const x=state.find(z=>z.id===id);if(x)x.section=sec});state.sort((a,b)=>{if(a.section!==b.section)return S.findIndex(x=>x[0]===a.section)-S.findIndex(x=>x[0]===b.section);return ids.indexOf(a.id)-ids.indexOf(b.id)});save();render()}})}
+function progress(){const a=state.filter(i=>activeTour==="all"||i.tour==="all"||i.tour===activeTour),d=a.filter(i=>i.done).length,t=a.length,p=t?Math.round(d/t*100):0;$("countText").textContent=`${d}/${t} mục đã chuẩn bị`;$("barFill").style.width=p+"%";$("pct").textContent=p+"%";$("ring").style.setProperty("--p",p);const bw=a.filter(i=>i.section==="backpack").reduce((s,i)=>s+(+i.weight||0),0),sw=a.filter(i=>i.section==="suitcase").reduce((s,i)=>s+(+i.weight||0),0);$("weightText").textContent=`Balo ${bw.toFixed(2)} kg · Vali ${sw.toFixed(2)} kg`;$("quickGrid").innerHTML=["wear","backpack","suitcase","docs"].map(s=>{const z=S.find(x=>x[0]===s),q=a.filter(i=>i.section===s);return `<div class="quick"><b>${z[2]} ${q.filter(i=>i.done).length}/${q.length}</b><span>${z[1]}</span></div>`}).join("")}
+function openModal(i=null){editingId=i?.id||null;$("modalTitle").textContent=i?"Sửa vật dụng":"Thêm vật dụng";$("fName").value=i?.name||"";$("fSection").value=i?.section||"backpack";$("fCategory").value=i?.category||"Khác";$("fPriority").value=i?.priority||"should";$("fDay").value=i?.day||"all";$("fWeight").value=i?.weight||0;$("fTour").value=i?.tour||"all";$("fNote").value=i?.note||"";$("modalWrap").classList.add("show")}function closeModal(){$("modalWrap").classList.remove("show")}
+$("fSection").innerHTML=S.map(x=>`<option value="${x[0]}">${x[2]} ${x[1]}</option>`).join("");$("saveBtn").onclick=()=>{const name=$("fName").value.trim();if(!name)return toast("Vui lòng nhập tên vật dụng");const data={name,section:$("fSection").value,category:$("fCategory").value,priority:$("fPriority").value,day:$("fDay").value,weight:+$("fWeight").value||0,tour:$("fTour").value,note:$("fNote").value.trim()};if(editingId)Object.assign(state.find(i=>i.id===editingId),data);else state.push({id:"u"+Date.now(),done:false,favorite:false,...data});save();closeModal();render();toast(editingId?"Đã cập nhật":"Đã thêm vật dụng")};$("addBtn").onclick=()=>openModal();$("cancelBtn").onclick=closeModal;$("modalWrap").onclick=e=>{if(e.target.id==="modalWrap")closeModal()};["search","statusFilter","dayFilter"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));$("darkBtn").onclick=()=>{document.body.classList.toggle("dark");localStorage.setItem(TK,document.body.classList.contains("dark")?"dark":"light");$("darkBtn").textContent=document.body.classList.contains("dark")?"☀️":"🌙"};$("resetBtn").onclick=()=>{if(confirm("Đặt lại checklist của chuyến hiện tại?")){state=structuredClone(D);save();renderTrips();render();toast("Đã đặt lại checklist")}};$("printBtn").onclick=()=>window.print();$("exportBtn").onclick=()=>{save();const b=new Blob([JSON.stringify(tripStore,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="vy-travel-kit-all-trips.json";a.click();URL.revokeObjectURL(a.href)};$("importFile").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(Array.isArray(d)){const t={id:"t"+Date.now(),name:"Chuyến đã nhập",type:"study",days:3,note:"",items:d};tripStore.trips.push(t);currentTripId=t.id;state=t.items}else if(d&&Array.isArray(d.trips)){tripStore=d;currentTripId=d.currentTripId||d.trips[0].id;state=currentTrip().items}else throw 0;save();renderTrips();render();toast("Đã nhập dữ liệu")}catch{alert("File JSON không hợp lệ")}};r.readAsText(f)};
+function openTrip(t=null){editingTripId=t?.id||null;$("tripModalTitle").textContent=t?"Sửa chuyến":"Tạo chuyến mới";$("tripName").value=t?.name||"";$("tripType").value=t?.type||"sea";$("tripDays").value=t?.days||3;$("tripNote").value=t?.note||"";$("tripModalWrap").classList.add("show")}
+function closeTrip(){$("tripModalWrap").classList.remove("show")}
+$("addTripBtn").onclick=()=>openTrip();$("tripCancelBtn").onclick=closeTrip;$("tripModalWrap").onclick=e=>{if(e.target.id==="tripModalWrap")closeTrip()};
+$("tripSaveBtn").onclick=()=>{const name=$("tripName").value.trim();if(!name)return toast("Vui lòng nhập tên chuyến");if(editingTripId){Object.assign(currentTripById(editingTripId),{name,type:$("tripType").value,days:+$("tripDays").value||1,note:$("tripNote").value.trim()})}else{save();const t={id:"t"+Date.now(),name,type:$("tripType").value,days:+$("tripDays").value||1,note:$("tripNote").value.trim(),items:structuredClone(D)};tripStore.trips.push(t);currentTripId=t.id;state=t.items}save();closeTrip();renderTrips();render();toast(editingTripId?"Đã cập nhật chuyến":"Đã tạo chuyến mới")};
+if(localStorage.getItem(TK)==="dark"){document.body.classList.add("dark");$("darkBtn").textContent="☀️"}renderTrips();render();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch(console.error);
+  });
+}
+
+const THEME_STORE_KEY="vy-travel-selected-theme";
+const THEME_MODE_KEY="vy-travel-theme-mode";
+const WEATHER_CACHE_KEY="vy-travel-weather-cache";
+const AVAILABLE_THEMES=["dream","ocean","forest","sunset","vintage","midnight","mist"];
+const $id=id=>document.getElementById(id);
+let themeMode=localStorage.getItem(THEME_MODE_KEY)||"dynamic";
+let lastWeather=null;
+
+function applyTheme(theme,saveManual=true){
+  if(!AVAILABLE_THEMES.includes(theme)) theme="dream";
+  document.body.dataset.theme=theme;
+  if(saveManual) localStorage.setItem(THEME_STORE_KEY,theme);
+  document.querySelectorAll(".theme-card").forEach(card=>card.classList.toggle("active",card.dataset.theme===theme));
+  const colors={dream:"#6e4fe8",ocean:"#1688d4",forest:"#3f8547",sunset:"#dc6032",vintage:"#80613b",midnight:"#08111e",mist:"#7d97b5"};
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content",colors[theme]||"#6e4fe8");
+}
+function getPeriod(date=new Date()){
+  const h=date.getHours()+date.getMinutes()/60;
+  if(h>=5&&h<7) return "dawn";
+  if(h>=7&&h<17) return "day";
+  if(h>=17&&h<19) return "sunset";
+  return "night";
+}
+function weatherGroup(code){
+  if(code===0) return "clear";
+  if([1,2,3,45,48].includes(code)) return "cloudy";
+  if((code>=51&&code<=67)||(code>=80&&code<=82)) return "rain";
+  if(code>=95) return "storm";
+  return "cloudy";
+}
+function weatherInfo(group,period){
+  const info={clear:[period==="night"?"🌙":"☀️",period==="night"?"Trời quang về đêm":"Trời quang"],cloudy:["☁️","Nhiều mây"],rain:["🌧️","Có mưa"],storm:["⛈️","Có giông"]};
+  return info[group]||info.cloudy;
+}
+function autoTheme(period,weather,tripType){
+  if(period==="night") return "midnight";
+  if(weather==="rain"||weather==="storm"||weather==="cloudy") return "mist";
+  if(period==="dawn"||period==="sunset") return "sunset";
+  if(themeMode==="smart"){
+    if(tripType==="sea") return "ocean";
+    if(tripType==="mountain") return "forest";
+    if(tripType==="study") return "vintage";
+  }
+  return "ocean";
+}
+function setMode(mode){
+  themeMode=mode;localStorage.setItem(THEME_MODE_KEY,mode);
+  document.querySelectorAll(".mode-btn").forEach(b=>b.classList.toggle("active",b.dataset.mode===mode));
+  $id("themeModeLabel").textContent=mode==="manual"?"Manual":mode==="smart"?"Smart Tour":"Dynamic";
+  document.querySelectorAll(".theme-card").forEach(c=>c.disabled=mode!=="manual");
+  $id("themeGrid").style.opacity=mode==="manual"?"1":".55";
+  if(mode==="manual"){
+    delete document.body.dataset.period;delete document.body.dataset.weather;
+    applyTheme(localStorage.getItem(THEME_STORE_KEY)||"dream",false);
+    updateStatus(null);
+  }else refreshDynamicTheme(true);
+}
+function updateStatus(weather){
+  const period=getPeriod();
+  const periodName={dawn:"Bình minh",day:"Ban ngày",sunset:"Hoàng hôn",night:"Ban đêm"}[period];
+  if(themeMode==="manual"){
+    $id("weatherIcon").textContent="🎨";$id("weatherTitle").textContent="Theme thủ công";$id("weatherDetail").textContent="Bạn đang tự chọn giao diện yêu thích.";$id("weatherTemp").firstChild.nodeValue="— ";return;
+  }
+  const group=weather?.group||"clear",[icon,label]=weatherInfo(group,period);
+  $id("weatherIcon").textContent=icon;$id("weatherTitle").textContent=`${periodName} · ${label}`;
+  $id("weatherDetail").textContent=weather?.location?`${weather.location} · tự cập nhật theo thời tiết`:`Theo giờ trên thiết bị · chưa cấp quyền vị trí`;
+  $id("weatherTemp").firstChild.nodeValue=weather?.temperature!=null?`${Math.round(weather.temperature)}° `:"--° ";
+}
+function applyDynamic(weather){
+  const period=getPeriod(),group=weather?.group||"clear";
+  document.body.dataset.period=period;document.body.dataset.weather=group;
+  const tripType=(typeof currentTrip==="function"&&currentTrip())?currentTrip().type:"all";
+  applyTheme(autoTheme(period,group,tripType),false);
+  const fx=$id("weatherFx");fx.className="weather-fx"+(group==="rain"||group==="storm"?" rain":"");
+  updateStatus(weather);
+}
+async function fetchWeather(lat,lon){
+  const url=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&timezone=auto`;
+  const res=await fetch(url);if(!res.ok) throw new Error("weather");const data=await res.json();
+  const w={temperature:data.current?.temperature_2m,code:data.current?.weather_code,group:weatherGroup(data.current?.weather_code),location:"Vị trí hiện tại",time:Date.now()};
+  localStorage.setItem(WEATHER_CACHE_KEY,JSON.stringify(w));return w;
+}
+function getCachedWeather(){try{const w=JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY));return w&&Date.now()-w.time<60*60*1000?w:null}catch{return null}}
+async function refreshDynamicTheme(requestLocation=false){
+  if(themeMode==="manual") return;
+  const cached=getCachedWeather();if(cached){lastWeather=cached;applyDynamic(cached)}else applyDynamic(null);
+  if(!navigator.geolocation) return;
+  navigator.geolocation.getCurrentPosition(async pos=>{try{lastWeather=await fetchWeather(pos.coords.latitude,pos.coords.longitude);applyDynamic(lastWeather)}catch{applyDynamic(cached)}},()=>applyDynamic(cached),{enableHighAccuracy:false,timeout:9000,maximumAge:30*60*1000});
+}
+function openThemeModal(){ $id("themeModalWrap").classList.add("show");setMode(themeMode); }
+function closeThemeModal(){ $id("themeModalWrap").classList.remove("show") }
+$id("themeBtn")?.addEventListener("click",openThemeModal);$id("themeCloseBtn")?.addEventListener("click",closeThemeModal);
+$id("themeModalWrap")?.addEventListener("click",e=>{if(e.target.id==="themeModalWrap")closeThemeModal()});
+document.querySelectorAll(".mode-btn").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.mode)));
+document.querySelectorAll(".theme-card").forEach(card=>card.addEventListener("click",()=>{if(themeMode!=="manual")return;applyTheme(card.dataset.theme);if(typeof toast==="function")toast("Đã đổi sang theme "+card.querySelector("b").textContent)}));
+setInterval(()=>{if(themeMode!=="manual")applyDynamic(lastWeather)},60*1000);
+setMode(themeMode);
+</script>
+
+
 
 <script>
-const STORE="vy-travel-v2";
-const defaults=[
- {id:"i1",name:"Kẹp ghi bài A4",category:"Trong balo",tag:"HDV",done:false},
- {id:"i2",name:"Giấy A4",category:"Trong balo",tag:"HDV",done:false},
- {id:"i3",name:"Bút",category:"Trong balo",tag:"HDV",done:false},
- {id:"i4",name:"Điện thoại",category:"Trong balo",tag:"Thiết bị",done:false},
- {id:"i5",name:"Sạc dự phòng",category:"Trong balo",tag:"Thiết bị",done:false},
- {id:"i6",name:"Quýt",category:"Trong balo",tag:"Bắt buộc",done:false},
- {id:"i7",name:"Kem chống nắng",category:"Trong balo",tag:"Chăm sóc",done:false},
- {id:"i8",name:"AIRism không mút",category:"Trong vali",tag:"Trang phục",done:false},
- {id:"i9",name:"Miếng dán ngực Adore",category:"Trong vali",tag:"Trang phục",done:false},
- {id:"i10",name:"Đồ bơi",category:"Trong vali",tag:"Biển",done:false},
- {id:"i11",name:"CCCD",category:"Giấy tờ",tag:"Bắt buộc",done:false},
- {id:"i12",name:"Thẻ sinh viên / thẻ HDV",category:"Giấy tờ",tag:"HDV",done:false},
- {id:"i13",name:"Thuốc cá nhân",category:"Thuốc & sức khỏe",tag:"Sức khỏe",done:false},
- {id:"i14",name:"Kiểm tra cửa và điện",category:"Trước khi rời nhà",tag:"An toàn",done:false}
-];
-const initial={
- currentTripId:"t1",
- trips:[{id:"t1",name:"Phan Thiết 3N2Đ",type:"sea",days:3,note:"Chuẩn bị cho tour biển và phần thực hành HDV.",items:structuredClone(defaults)}],
- tours:[
-  {id:"r1",name:"TP.HCM → Phan Thiết",points:["TP.HCM","Đồng Nai","Long Khánh","Núi Chứa Chan","Phan Thiết"]},
-  {id:"r2",name:"Tour học tập TP.HCM",points:["Bảo tàng Lịch sử","Lăng Ông Bà Chiểu","Chợ Bến Thành"]}
- ],
- notes:[
-  {id:"n1",title:"Lăng Ông Bà Chiểu",province:"TP.HCM",summary:"Vị trí, bố cục lăng và sự nghiệp Tả quân Lê Văn Duyệt."},
-  {id:"n2",title:"Miếu Bà Thiên Hậu",province:"TP.HCM",summary:"Quá trình hình thành, trùng tu và tên gọi Tuệ Thành."},
-  {id:"n3",title:"Rừng Cà Mau",province:"Cà Mau",summary:"Hệ sinh thái rừng ngập mặn và các loài cây đặc trưng."},
-  {id:"n4",title:"Núi Chứa Chan",province:"Đồng Nai",summary:"Điểm thuyết minh trên tuyến TP.HCM – Phan Thiết."}
- ]
-};
-let state=load();
-function load(){try{return JSON.parse(localStorage.getItem(STORE))||structuredClone(initial)}catch(e){return structuredClone(initial)}}
-function save(){localStorage.setItem(STORE,JSON.stringify(state))}
-function currentTrip(){return state.trips.find(t=>t.id===state.currentTripId)||state.trips[0]}
-function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
-function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),1700)}
-function progress(t){const total=t.items.length,done=t.items.filter(i=>i.done).length;return {total,done,pct:total?Math.round(done/total*100):0}}
-function go(page){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));document.getElementById(page+"Page").classList.add("active");document.querySelectorAll(".navbtn").forEach(b=>b.classList.toggle("active",b.dataset.page===page));window.scrollTo({top:0,behavior:"smooth"});if(page==="kit")renderKit()}
-document.querySelectorAll(".navbtn").forEach(b=>b.onclick=()=>go(b.dataset.page));document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go));
-function renderDashboard(){
- const t=currentTrip(),p=progress(t);
- document.getElementById("heroTripName").textContent=t.name;
- document.getElementById("heroTripNote").textContent=t.note||"Theo dõi hành lý và các việc cần hoàn thành trước khi khởi hành.";
- document.getElementById("progressText").textContent=`${p.done}/${p.total} mục`;
- document.getElementById("progressPct").textContent=p.pct+"%";
- document.getElementById("progressRing").style.setProperty("--p",p.pct);
- document.getElementById("missingText").textContent=p.total-p.done?`Còn ${p.total-p.done} mục chưa chuẩn bị`:"Đã sẵn sàng lên đường";
- document.getElementById("metricTrips").textContent=state.trips.length;
- document.getElementById("metricTours").textContent=state.tours.length;
- document.getElementById("metricNotes").textContent=state.notes.length;
- document.getElementById("metricDone").textContent=p.done;
- document.getElementById("dashboardTrips").innerHTML=state.trips.map(tr=>{const x=progress(tr);return `<article class="card trip-card"><div class="cover">${tr.type==="sea"?"🏖️":tr.type==="mountain"?"⛰️":tr.type==="study"?"🎓":"🏙️"}</div><h3>${esc(tr.name)}</h3><div class="small">${tr.days} ngày · ${x.done}/${x.total} mục</div><div class="bar"><i style="width:${x.pct}%"></i></div><div class="small">${x.pct}% hoàn thành</div><div class="card-actions"><button class="mini openTrip" data-id="${tr.id}">Mở Kit</button><button class="mini copyTrip" data-id="${tr.id}">Nhân bản</button></div></article>`}).join("");
- document.querySelectorAll(".openTrip").forEach(b=>b.onclick=()=>{state.currentTripId=b.dataset.id;save();go("kit");renderAll()});
- document.querySelectorAll(".copyTrip").forEach(b=>b.onclick=()=>duplicateTrip(b.dataset.id));
-}
-function renderKit(){
- const list=document.getElementById("kitTripList");
- list.innerHTML=state.trips.map(t=>`<button class="${t.id===state.currentTripId?"active":""}" data-id="${t.id}"><b>${esc(t.name)}</b><div class="small">${progress(t).pct}% hoàn thành</div></button>`).join("");
- list.querySelectorAll("button").forEach(b=>b.onclick=()=>{state.currentTripId=b.dataset.id;save();renderAll()});
- const q=document.getElementById("kitSearch").value.toLowerCase(),filter=document.getElementById("kitFilter").value,t=currentTrip();
- const items=t.items.filter(i=>(!q||i.name.toLowerCase().includes(q)||i.category.toLowerCase().includes(q))&&(filter==="all"||filter==="done"&&i.done||filter==="todo"&&!i.done));
- const groups=[...new Set(items.map(i=>i.category))];
- document.getElementById("checklist").innerHTML=groups.length?groups.map(g=>`<section class="category"><h3>${esc(g)}</h3>${items.filter(i=>i.category===g).map(i=>`<label class="item ${i.done?"done":""}"><input type="checkbox" data-id="${i.id}" ${i.done?"checked":""}><span class="name">${esc(i.name)}</span>${i.tag?`<span class="tag">${esc(i.tag)}</span>`:""}</label>`).join("")}</section>`).join(""):`<div class="empty">Không có vật dụng phù hợp.</div>`;
- document.querySelectorAll(".item input").forEach(c=>c.onchange=()=>{const i=t.items.find(x=>x.id===c.dataset.id);i.done=c.checked;save();renderAll()});
-}
-function renderTours(){document.getElementById("tourGrid").innerHTML=state.tours.map(t=>`<article class="card tour-card"><div style="font-size:28px">🗺️</div><h3>${esc(t.name)}</h3><div class="small">${t.points.length} điểm</div><p>${t.points.map(esc).join(" → ")}</p><div class="card-actions"><button class="mini">Mở tuyến</button></div></article>`).join("")}
-function renderNotes(){const q=document.getElementById("noteSearch").value.toLowerCase();document.getElementById("notebookGrid").innerHTML=state.notes.filter(n=>!q||`${n.title} ${n.province} ${n.summary}`.toLowerCase().includes(q)).map(n=>`<article class="card note-card"><div class="tag">${esc(n.province)}</div><h3 style="margin-top:12px">${esc(n.title)}</h3><p class="small" style="line-height:1.55">${esc(n.summary)}</p><div class="card-actions"><button class="mini">Mở bài</button></div></article>`).join("")}
-function renderAll(){renderDashboard();renderKit();renderTours();renderNotes()}
-function openModal(id){document.getElementById(id).classList.add("show")}function closeModal(id){document.getElementById(id).classList.remove("show")}
-document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>closeModal(b.dataset.close));
-["newTripHero","newTripDashboard","newTripKit"].forEach(id=>document.getElementById(id).onclick=()=>openModal("tripModal"));
-document.getElementById("saveTripBtn").onclick=()=>{const name=document.getElementById("tripName").value.trim();if(!name)return toast("Vui lòng nhập tên chuyến");const t={id:"t"+Date.now(),name,type:document.getElementById("tripType").value,days:+document.getElementById("tripDays").value||1,note:document.getElementById("tripNote").value.trim(),items:structuredClone(defaults).map((i,k)=>({...i,id:"i"+Date.now()+k}))};state.trips.push(t);state.currentTripId=t.id;save();closeModal("tripModal");renderAll();go("kit");toast("Đã tạo chuyến mới")};
-function duplicateTrip(id){const s=state.trips.find(t=>t.id===id),n=structuredClone(s);n.id="t"+Date.now();n.name=s.name+" – bản sao";n.items=n.items.map((i,k)=>({...i,id:"i"+Date.now()+k,done:false}));state.trips.push(n);state.currentTripId=n.id;save();renderAll();toast("Đã nhân bản chuyến")}
-document.getElementById("addItemBtn").onclick=()=>openModal("itemModal");
-document.getElementById("saveItemBtn").onclick=()=>{const name=document.getElementById("itemName").value.trim();if(!name)return toast("Vui lòng nhập tên vật dụng");currentTrip().items.push({id:"i"+Date.now(),name,category:document.getElementById("itemCategory").value,tag:document.getElementById("itemTag").value.trim(),done:false});save();closeModal("itemModal");renderAll();toast("Đã thêm vật dụng")};
-document.getElementById("kitSearch").oninput=renderKit;document.getElementById("kitFilter").onchange=renderKit;document.getElementById("noteSearch").oninput=renderNotes;
-function exportData(){const a=document.createElement("a"),blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});a.href=URL.createObjectURL(blob);a.download="vy-travel-backup.json";a.click();URL.revokeObjectURL(a.href)}
-document.getElementById("exportBtn").onclick=exportData;document.getElementById("settingsExport").onclick=exportData;
-document.getElementById("importInput").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!d.trips||!d.notes)throw 0;state=d;save();renderAll();toast("Đã nhập dữ liệu")}catch{alert("File không hợp lệ")}};r.readAsText(f)};
-document.getElementById("themeBtn").onclick=()=>{document.body.classList.toggle("dark");localStorage.setItem("vy-theme",document.body.classList.contains("dark")?"dark":"light")};if(localStorage.getItem("vy-theme")==="dark")document.body.classList.add("dark");
-document.getElementById("addTourBtn").onclick=()=>toast("Mẫu tạo tuyến sẽ được thêm ở bản tiếp theo");
-document.getElementById("addNoteBtn").onclick=()=>toast("Trình soạn bài sẽ được thêm ở bản tiếp theo");
-renderAll();
-if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));
+window.addEventListener("DOMContentLoaded",()=>{
+ const b=document.getElementById("darkBtn");if(b)b.onclick=()=>{if(themeMode!=="manual"){setMode("manual");applyTheme("midnight")}else{const cur=document.body.dataset.theme;applyTheme(cur==="midnight"?"dream":"midnight")}};
+});
 </script>
-</body>
-</html>
+</body></html>
