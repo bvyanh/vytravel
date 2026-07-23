@@ -1,13 +1,12 @@
 {
-  "name": "Vy Travel Kit — Multi Trip",
+  "name": "Vy Travel",
   "short_name": "Vy Travel",
-  "description": "Checklist hành lý và chuẩn bị tour dành cho hướng dẫn viên du lịch.",
+  "description": "Trợ lý chuẩn bị tour, kit hành lý và sổ tay dành cho hướng dẫn viên.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#eef2f7",
-  "theme_color": "#5b7cff",
-  "orientation": "portrait-primary",
+  "background_color": "#eef3f9",
+  "theme_color": "#6d5dfc",
   "icons": [
     {
       "src": "icons/icon-192.png",

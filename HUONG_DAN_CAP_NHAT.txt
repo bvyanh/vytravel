@@ -1,0 +1,28 @@
+VY TRAVEL V2 — CÁCH CẬP NHẬT GITHUB PAGES
+
+1. Giải nén file ZIP.
+2. Vào repository GitHub: vytravel.
+3. Xóa hoặc ghi đè các file cũ bằng toàn bộ nội dung trong gói này:
+   - index.html
+   - manifest.webmanifest
+   - service-worker.js
+   - thư mục icons
+4. Commit changes.
+5. Chờ GitHub Pages triển khai lại khoảng 1–3 phút.
+6. Mở https://bvyanh.github.io/vytravel/
+7. Nếu vẫn thấy bản cũ:
+   - Chrome: nhấn Ctrl + Shift + R
+   - Điện thoại: đóng app PWA rồi mở lại; nếu cần, xóa app khỏi màn hình chính và thêm lại.
+
+TÍNH NĂNG GIAI ĐOẠN 1
+- Dashboard
+- Thanh điều hướng 5 mục
+- Kit theo từng chuyến
+- Tạo và nhân bản chuyến
+- Checklist riêng cho mỗi chuyến
+- Tour nền tảng
+- Sổ tay HDV nền tảng
+- Tìm kiếm
+- Dark mode
+- Xuất/nhập JSON
+- PWA và offline
