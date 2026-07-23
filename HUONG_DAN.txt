@@ -1,0 +1,25 @@
+VY TRAVEL KIT — PWA
+
+Các file cần được giữ nguyên trong cùng thư mục:
+- index.html
+- manifest.webmanifest
+- service-worker.js
+- icons/
+
+Lưu ý:
+PWA chỉ cài được khi trang được mở qua HTTPS hoặc localhost.
+Mở trực tiếp file index.html vẫn dùng được checklist, nhưng nút “Thêm vào màn hình chính”
+và chế độ offline của PWA có thể không hoạt động đầy đủ.
+
+Cách đưa lên GitHub Pages:
+1. Tạo repository mới.
+2. Tải toàn bộ nội dung trong thư mục này lên repository.
+3. Vào Settings → Pages.
+4. Chọn Deploy from a branch → main → /(root).
+5. Mở đường link GitHub Pages được cấp.
+
+Cài trên iPhone:
+Safari → nút Chia sẻ → Thêm vào MH chính.
+
+Cài trên Android:
+Chrome → menu ⋮ → Thêm vào màn hình chính / Cài đặt ứng dụng.

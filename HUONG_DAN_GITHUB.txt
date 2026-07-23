@@ -1,0 +1,10 @@
+1. Giải nén file ZIP.
+2. Tạo repository GitHub mới, ví dụ: vy-travel-kit.
+3. Upload toàn bộ file và thư mục bên trong.
+4. GitHub: Settings → Pages → Deploy from a branch → main → /(root) → Save.
+5. Mở link GitHub Pages được cấp.
+6. iPhone: Safari → Chia sẻ → Thêm vào MH chính.
+7. Android: Chrome → menu ⋮ → Cài đặt ứng dụng.
+
+Bản này có mục Kit theo từng chuyến: tạo, sửa, nhân bản, xóa; mỗi chuyến có checklist và tiến độ riêng.
+Dữ liệu lưu riêng trên từng trình duyệt. Dùng Xuất/Nhập JSON khi đổi máy.
